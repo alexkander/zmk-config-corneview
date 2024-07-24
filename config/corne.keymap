@@ -6,33 +6,42 @@
 #include <dt-bindings/zmk/mouse.h>
 
 / {
+    behaviors {
+        mo2_4: momentary_layer_2_4 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&mo 2>, <&mo 4>;
+            tapping-term-ms = <200>;
+            label = "Momentary layer tap 2, tap 4";
+        };
+
+        mo3_5: momentary_layer_3_5 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&mo 3>, <&mo 5>;
+            tapping-term-ms = <200>;
+            label = "Momentary layer tap 3, tap 5";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default {
             bindings = <
-&lt 4 TAB  &kp SEMI  &kp COMMA  &kp DOT   &kp P  &kp Y        &kp F    &kp G  &kp C          &kp R  &kp L  &kp BSPC
-&kp LSHFT  &kp A     &kp O      &kp E     &kp U  &kp I        &kp D    &kp H  &kp T          &kp N  &kp S  &mt RIGHT_SHIFT SQT
-&kp LCTRL  &kp SQT   &kp Q      &kp J     &kp K  &kp X        &kp B    &kp M  &kp W          &kp V  &kp Z  &mt RIGHT_CONTROL ESC
-                                &kp LALT  &mo 3  &kp SPACE    &kp RET  &mo 4  &kp RIGHT_WIN
+&lt 3 TAB  &kp SEMI  &kp COMMA  &kp DOT   &kp P   &kp Y        &kp F    &kp G   &kp C          &kp R  &kp L  &kp BSPC
+&kp LSHFT  &kp A     &kp O      &kp E     &kp U   &kp I        &kp D    &kp H   &kp T          &kp N  &kp S  &mt RIGHT_SHIFT SQT
+&kp LCTRL  &kp SQT   &kp Q      &kp J     &kp K   &kp X        &kp B    &kp M   &kp W          &kp V  &kp Z  &mt RIGHT_CONTROL ESC
+                                &kp LALT  &mo2_4  &kp SPACE    &kp RET  &mo3_5  &kp RIGHT_WIN
             >;
         };
 
         qwerty {
             bindings = <
-&lt 4 TAB  &kp Q  &kp W  &kp E         &kp R  &kp T        &kp Y    &kp U  &kp I          &kp O    &kp P     &kp BSPC
-&kp LSHFT  &kp A  &kp S  &kp D         &kp F  &kp G        &kp H    &kp J  &kp K          &kp L    &kp SEMI  &mt RSHIFT SQT
-&kp LCTRL  &kp Z  &kp X  &kp C         &kp V  &kp B        &kp N    &kp M  &kp COMMA      &kp DOT  &kp FSLH  &mt RCTRL ESC
-                         &kp LEFT_ALT  &mo 3  &kp SPACE    &kp RET  &mo 4  &kp RIGHT_WIN
-            >;
-        };
-
-        numpad {
-            bindings = <
-&none  &none  &none  &none  &none  &none    &none   &kp N7  &kp N8  &kp N9  &kp MINUS  &kp PLUS
-&none  &none  &none  &none  &none  &none    &none   &kp N4  &kp N5  &kp N6  &kp FSLH   &kp STAR
-&none  &none  &none  &none  &none  &none    &kp N0  &kp N1  &kp N2  &kp N3  &kp RET    &kp DEL
-                     &none  &mo 3  &none    &none   &mo 4   &none
+&lt 3 TAB  &kp Q  &kp W  &kp E         &kp R   &kp T        &kp Y    &kp U   &kp I          &kp O    &kp P     &kp BSPC
+&kp LSHFT  &kp A  &kp S  &kp D         &kp F   &kp G        &kp H    &kp J   &kp K          &kp L    &kp SEMI  &mt RSHIFT SQT
+&kp LCTRL  &kp Z  &kp X  &kp C         &kp V   &kp B        &kp N    &kp M   &kp COMMA      &kp DOT  &kp FSLH  &mt RCTRL ESC
+                         &kp LEFT_ALT  &mo2_4  &kp SPACE    &kp RET  &mo3_5  &kp RIGHT_WIN
             >;
         };
 
@@ -49,8 +58,17 @@
             bindings = <
 &kp TAB     &kp EXCL      &kp AT      &kp HASH    &kp DLLR    &kp PRCNT     &kp CARET  &kp AMPS   &kp STAR       &kp LPAR  &kp RPAR  &kp BACKSPACE
 &kp LSHIFT  &kp C_VOL_UP  &kp K_PREV  &kp C_PLAY  &kp C_STOP  &kp C_NEXT    &kp MINUS  &kp EQUAL  &kp LBKT       &kp RBKT  &kp FSLH  &mt RSHIFT GRAVE
-&kp LCTRL   &kp C_VOL_DN  &kp C_MUTE  &none       &none       &tog 2        &kp UNDER  &kp PLUS   &kp LBRC       &kp RBRC  &kp BSLH  &mt RCTRL TILDE
+&kp LCTRL   &kp C_VOL_DN  &kp C_MUTE  &none       &none       &tog 4        &kp UNDER  &kp PLUS   &kp LBRC       &kp RBRC  &kp BSLH  &mt RCTRL TILDE
                                       &kp LALT    &mo 5       &kp SPACE     &kp RET    &none      &kp RIGHT_WIN
+            >;
+        };
+
+        numpad {
+            bindings = <
+&none  &none  &none  &none  &none  &none    &none   &kp N7  &kp N8  &kp N9  &kp MINUS  &kp PLUS
+&none  &none  &none  &none  &none  &none    &none   &kp N4  &kp N5  &kp N6  &kp FSLH   &kp STAR
+&none  &none  &none  &none  &none  &none    &kp N0  &kp N1  &kp N2  &kp N3  &kp RET    &kp DEL
+                     &none  &mo 2  &none    &none   &mo 3   &none
             >;
         };
 
