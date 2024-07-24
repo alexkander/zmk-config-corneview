@@ -4,8 +4,8 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/mouse.h>
-#include "zmk/behavior.h"
-#include "zmk/keymap.h"
+#include <dt-bindings/zmk/behavior.h>
+#include <dt-bindings/zmk/keymap.h>
 
 static int behavior_tab_alt_layer_on_hold(struct zmk_behavior_binding *binding,
                                           struct zmk_behavior_binding_event event,
