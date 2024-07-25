@@ -19,7 +19,7 @@
         mo_r: momentary_layer_right {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&mo 3>, <&mo 6>;
+            bindings = <&mo 3>, <&mo 5>;
 
             tapping-term-ms = <200>;
             label = "Momentary layers right";
@@ -30,7 +30,8 @@
         tab: tab_bahavior {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&mo 6 &mt LEFT_ALT TAB>;
+            bindings = <&macro_press>, <&mo 6 &mt LEFT_ALT TAB>;
+
             label = "Tab behavior";
         };
     };
@@ -40,7 +41,7 @@
 
         default {
             bindings = <
-&tab       &kp SEMI  &kp COMMA  &kp DOT   &kp P  &kp Y        &kp F    &kp G  &kp C          &kp R  &kp L  &kp BSPC
+&lt 3 TAB  &kp SEMI  &kp COMMA  &kp DOT   &kp P  &kp Y        &kp F    &kp G  &kp C          &kp R  &kp L  &kp BSPC
 &kp LSHFT  &kp A     &kp O      &kp E     &kp U  &kp I        &kp D    &kp H  &kp T          &kp N  &kp S  &mt RIGHT_SHIFT SQT
 &kp LCTRL  &kp SQT   &kp Q      &kp J     &kp K  &kp X        &kp B    &kp M  &kp W          &kp V  &kp Z  &mt RIGHT_CONTROL ESC
                                 &kp LALT  &mo_l  &kp SPACE    &kp RET  &mo_r  &kp RIGHT_WIN
@@ -49,7 +50,7 @@
 
         qwerty {
             bindings = <
-&tab       &kp Q  &kp W  &kp E         &kp R  &kp T        &kp Y    &kp U  &kp I          &kp O    &kp P     &kp BSPC
+&lt 3 TAB  &kp Q  &kp W  &kp E         &kp R  &kp T        &kp Y    &kp U  &kp I          &kp O    &kp P     &kp BSPC
 &kp LSHFT  &kp A  &kp S  &kp D         &kp F  &kp G        &kp H    &kp J  &kp K          &kp L    &kp SEMI  &mt RSHIFT SQT
 &kp LCTRL  &kp Z  &kp X  &kp C         &kp V  &kp B        &kp N    &kp M  &kp COMMA      &kp DOT  &kp FSLH  &mt RCTRL ESC
                          &kp LEFT_ALT  &mo_l  &kp SPACE    &kp RET  &mo_r  &kp RIGHT_WIN
@@ -95,7 +96,7 @@
         adjust {
             bindings = <
 &none  &none  &none  &kp TAB     &kp LS(TAB)  &none                &kp CAPSLOCK  &tog 1      &bt BT_PRV  &bt BT_NXT  &bt BT_CLR    &none
-&none  &none  &none  &none       &none        &none                &none         &mkp LCLK   &mkp RCLK   &mkp MCLK   &mkp MB4      &mkp MB5
+&none  &none  &none  &none       &none        &none                &kp KP_NUM    &mkp LCLK   &mkp RCLK   &mkp MCLK   &mkp MB4      &mkp MB5
 &none  &none  &none  &none       &none        &ext_power EP_TOG    &soft_off     &bl BL_TOG  &bl BL_INC  &bl BL_DEC  &bl BL_CYCLE  &none
                      &sys_reset  &none        &none                &none         &none       &none
             >;
