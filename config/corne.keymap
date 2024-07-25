@@ -32,7 +32,7 @@
             #binding-cells = <0>;
             // press-bindings = <&kp A>;
             // release-bindings = <&kp B>;
-            bindings = <&macro_press>, <&mo 6, &kp LALT>, <&macro_release>, <&mo 6, &kp LALT>;
+            bindings = <&macro_press>, <&mo 6 &kp LALT>, <&macro_release>, <&mo 6 &kp LALT>;
 
             label = "Tab behavior";
         };
