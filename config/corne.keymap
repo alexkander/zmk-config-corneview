@@ -30,14 +30,23 @@
         tab: tab_behavior {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press>, <&mo 6>, <&mt LEFT_ALT TAB>, <&macro_release>, <&mo 6>;
+            bindings = <&macro_press>
+                , <&mo 6>
+                , <&mt LALT TAB>
+                , <&macro_release>
+                , <&mo 6>;
 
             label = "Tab behavior";
         };
         zed_em_kay: zed_em_kay {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press>, <&kp LSHFT>, <&macro_tap>, <&kp Z &kp M &kp K>, <&macro_release>, <&kp LSHFT>;
+            bindings = <&macro_press>
+                , <&kp LSHFT>
+                , <&macro_tap>
+                , <&kp Z &kp M &kp K>
+                , <&macro_release>
+                , <&kp LSHFT>;
         };
     };
 
