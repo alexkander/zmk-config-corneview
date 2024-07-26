@@ -45,8 +45,8 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LALT &kp TAB>,
-                <&macro_release>,
+                <&kp LALT>,
+                <&macro_tap>,
                 <&kp TAB>;
 
             label = "Next Win";
@@ -57,9 +57,9 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LALT &kp LSHIFT &kp TAB>,
-                <&macro_release>,
-                <&kp TAB>;
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp LSHIFT &kp TAB>;
 
             label = "Prev Win";
         };
@@ -69,26 +69,12 @@
             #binding-cells = <1>;
             bindings =
                 <&macro_release>,
-                <&kp LALT &kp LSHIFT &kp LCTRL>,
+                <&kp LALT>,
                 <&macro_tap>,
                 <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
                 <&macro_press>;
 
             label = "Special command";
-        };
-
-        scmb: special_command_modified_behavior {
-            compatible = "zmk,behavior-macro-two-param";
-            #binding-cells = <2>;
-            bindings =
-                <&macro_release>,
-                <&kp LALT &kp LSHIFT &kp LCTRL>,
-                <&macro_tap>,
-                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
-                <&macro_tap>,
-                <&macro_param_2to1 &kp MACRO_PLACEHOLDER>;
-
-            label = "Special command mod";
         };
     };
 
