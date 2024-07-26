@@ -70,6 +70,16 @@
 
             label = "Special command";
         };
+        scmb: special_command_modified_behavior {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <2>;
+            bindings =
+                <&macro_release>,<&kp LALT &kp LSHIFT &kp LCTRL>,
+                <&macro_tap>, <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER>,
+                <&macro_tap>, <&macro_param_2to1>, <&kp MACRO_PLACEHOLDER>;
+
+            label = "Special command mod";
+        };
     };
 
     keymap {
@@ -141,8 +151,8 @@
         commands {
             bindings = <
 &none  &none  &none  &pwb     &nwb  &none    &none  &none           &none           &none            &none  &none
-&scb F1  &scb F2  &scb F3  &scb F4    &scb F5   &scb F6    &scb HOME  &none           &scb UP_ARROW    &none            &scb LS(PG_UP)  &none
-&scb F7  &scb F8  &scb F9  &scb F10   &scb F11  &scb F12    &scb END  &scb LEFT_ARROW   &scb DOWN_ARROW  &scb RIGHT_ARROW  &scb LS(PG_DN)  &none
+&scb F1  &scb F2  &scb F3  &scb F4    &scb F5   &scb F6    &scb HOME  &none           &scb UP_ARROW    &none            &scmb LSHIFT PG_UP  &none
+&scb F7  &scb F8  &scb F9  &scb F10   &scb F11  &scb F12    &scb END  &scb LEFT_ARROW   &scb DOWN_ARROW  &scb RIGHT_ARROW  &scmb LSHIFT PG_DN  &none
                      &none      &none   &none    &none  &none           &none
             >;
         };
